@@ -19,3 +19,4 @@ D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\Day3Input - Copy.txt
 D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\Day4Input.txt
 D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\testInput.txt
 D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\HoldingCell.txt
+D:\Repos\AdventOfCode\AdventOfCode\obj\Debug\net8.0\AdventOfCode.sourcelink.json

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO.Compression;
 using System.Linq;
 using System.Numerics;
 using System.Runtime.InteropServices.Marshalling;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace AdventOfCode
@@ -33,20 +35,100 @@ namespace AdventOfCode
             allPossibleStraightLines.Add(diagLRLines);
             allPossibleStraightLines.Add(diagRLLines);
 
-            foreach (var listOfStrings in allPossibleStraightLines)
-            {
-                Console.WriteLine("list " + allPossibleStraightLines.IndexOf(listOfStrings));
-                foreach (var stringInList in listOfStrings)
-                {
+            FindXDashMASes(diagLRLines, diagRLLines);
+        }
 
-                    Console.WriteLine(stringInList);
+        static void FindXDashMASes(List<string> diagLR, List<string> diagRL)
+        {
+            
+            int foundInCurrentString = 0;
+            List<Vector2> indexOfAs = new();
+            List<Vector2> secondIndexOfAs = new();
+
+            foreach (string line in diagLR)
+            {
+
+                foreach (var match in Regex.Matches(line, "(MAS)|(SAM)"))
+                {
+                    indexOfAs.Add(new Vector2(diagLR.IndexOf(line), line.IndexOf(match.ToString()) +1));
 
                 }
             }
 
+            foreach(string line in diagRL)
+            {
+                foreach (var match in Regex.Matches(line, "(MAS)|(SAM)"))
+                {
+                    secondIndexOfAs.Add(new Vector2(diagRL.IndexOf(line), line.IndexOf(match.ToString())+1 ));
+
+
+                }
+
+            }
+
+            foreach(var i in indexOfAs)
+            {
+                foreach(var j in secondIndexOfAs)
+                {
+                        Console.WriteLine($"{i.ToString()} ?= {j.ToString()}");
+                    if (i.Equals(j))
+                    {
+                        Console.WriteLine($"Yes");
+                        foundInCurrentString++;
+                    }else
+                        Console.WriteLine($"No");
+                }
+            }
+
+            Console.WriteLine("X-MASes found: " +  foundInCurrentString);
 
         }
 
+        static void FindXMASes(List<List<string>> allPossibleStraightLines)
+        {
+            int XMASesFound = 0;
+
+            foreach (var listOfStrings in allPossibleStraightLines)
+            {
+                // Console.WriteLine("list " + allPossibleStraightLines.IndexOf(listOfStrings));
+                foreach (string stringInList in listOfStrings)
+                {
+                    int foundInCurrentString = 0;
+                    foreach (var match in Regex.Matches(stringInList, "(XMAS)"))
+                    {
+
+                        foundInCurrentString++;
+                    }
+
+                    foreach (var match in Regex.Matches(stringInList, "(SAMX)"))
+                    {
+                        foundInCurrentString++;
+                    }
+                    Console.WriteLine($"Found {foundInCurrentString} in line {listOfStrings.IndexOf(stringInList)}: {stringInList}");
+                    XMASesFound += foundInCurrentString;
+                }
+            }
+
+            Console.WriteLine("XMASes found: " + XMASesFound);
+        }
+
+        static bool StringMatchesXMAS(string input, string detecting = "XMAS")
+        {
+            if (input.Contains(detecting))
+            {
+                return true;
+            }
+            else
+            {
+                input.Reverse();
+                if (input.Contains(detecting))
+                {
+                    return true;
+                }
+                else return false;
+            }
+        }
+        
         static List<string> FindVerticalLines(string[] rawInput)
         {
             List<string> verticalLines = new();
@@ -80,8 +162,6 @@ namespace AdventOfCode
                     coordinates.Y = lRIndex;
                     if (coordinates.Y < 0) coordinates.Y = 0;
 
-                    var stringLine = arrayOfStrings[linesIndex];
-
                     diagLine += GetItemAtCoordinates(arrayOfStrings, coordinates);
 
                     lRIndex++;
@@ -103,15 +183,13 @@ namespace AdventOfCode
                 Vector2 coordinates = Vector2.Zero;
                 int horIndex =  i;
                 int vertIndex = 0;
-                while (NextLineExists(arrayOfStrings, horIndex))
+                while (horIndex + 1 < anyString.Length && horIndex < anyString.Length)
                 {
                     coordinates.X = vertIndex;
                     coordinates.Y = horIndex;
                     if (coordinates.Y < 0) coordinates.Y = 0;
 
-
                     diagLine += GetItemAtCoordinates(arrayOfStrings, coordinates);
-                    //Console.WriteLine(diagLine);
 
                     horIndex++;
                     vertIndex++;
@@ -120,7 +198,6 @@ namespace AdventOfCode
                 coordinates.Y = horIndex;
                 i = originalI;
                 diagLine += GetItemAtCoordinates(arrayOfStrings, coordinates);
-                // (int i = arrayOfStrings.Length-1; i >=0; i--)
                 result.Add(diagLine);
             }
 
@@ -145,7 +222,6 @@ namespace AdventOfCode
                     coordinates.Y = lRIndex;
                     if (coordinates.Y < 0) coordinates.Y = 0;
 
-
                     diagLine += GetItemAtCoordinates(arrayOfStrings, coordinates);
 
                     lRIndex--;
@@ -155,36 +231,32 @@ namespace AdventOfCode
                 coordinates.Y = lRIndex;
                 i = originalI;
                 diagLine += GetItemAtCoordinates(arrayOfStrings, coordinates);
-                // (int i = arrayOfStrings.Length-1; i >=0; i--)
                 result.Add(diagLine);
             }
 
             string anyString = arrayOfStrings[0];
-            for (int i = 1; i < anyString.Length; i++)
+            for (int i = anyString.Length-2; i>=0; i--)
             {
                 string diagLine = "";
                 int originalI = i;
                 Vector2 coordinates = Vector2.Zero;
                 int horIndex = i;
                 int vertIndex = 0;
-                while (NextLineExists(arrayOfStrings, horIndex))
+                while (horIndex-1>=0&&horIndex<anyString.Length&&NextLineExists(arrayOfStrings, vertIndex))
                 {
                     coordinates.X = vertIndex;
                     coordinates.Y = horIndex;
                     if (coordinates.Y < 0) coordinates.Y = 0;
 
-
                     diagLine += GetItemAtCoordinates(arrayOfStrings, coordinates);
-                    //Console.WriteLine(diagLine);
 
-                    horIndex++;
+                    horIndex--;
                     vertIndex++;
                 }
                 coordinates.X = vertIndex;
                 coordinates.Y = horIndex;
                 i = originalI;
                 diagLine += GetItemAtCoordinates(arrayOfStrings, coordinates);
-                // (int i = arrayOfStrings.Length-1; i >=0; i--)
                 result.Add(diagLine);
             }
 
@@ -201,7 +273,5 @@ namespace AdventOfCode
             return currentIndex + 1 < listToCheck.Length;
         }
         
-
-     
     }
 }
