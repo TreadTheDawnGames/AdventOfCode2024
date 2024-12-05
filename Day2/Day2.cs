@@ -8,8 +8,8 @@ namespace AdventOfCode
 {
     internal class Day2
     {
-        
-    
+
+
         public static void DoWork(string[] rawInput)
         {
             int counter = 0;
@@ -22,7 +22,8 @@ namespace AdventOfCode
 
                     safeCounter++;
                 }
-                else { 
+                else
+                {
                     for (int i = -1; i < ExtractIntsFromLine(rawInputLine).Count; i++)
                         if (IsLineSafe(ExtractIntsFromLine(rawInputLine), i))
                         {
@@ -41,10 +42,10 @@ namespace AdventOfCode
 
                     }
                 }
-                    counter = 0;
+                counter = 0;
             }
             Console.WriteLine();
-            Console.WriteLine("SafeLines: "+safeCounter);// counter.ToString();
+            Console.WriteLine("SafeLines: " + safeCounter);// counter.ToString();
         }
 
         static bool IsLineSafe(List<int> level, int skipIndex)
@@ -86,18 +87,18 @@ namespace AdventOfCode
                     checksGreaterThan++;
                 }
             }
-                //if the checks score correctly
-                if (checksLessThan == totalChecks || checksGreaterThan == totalChecks)
-                {
-                    return true;
-                }
-                else
-                {
+            //if the checks score correctly
+            if (checksLessThan == totalChecks || checksGreaterThan == totalChecks)
+            {
+                return true;
+            }
+            else
+            {
 
-                    return false;
-                }
+                return false;
+            }
 
-            
+
 
         }
         static bool IsLineSafe(List<int> level)
@@ -109,7 +110,7 @@ namespace AdventOfCode
             //foreach number on the level except the last
             for (int i = 0; i < level.Count - 1; i++)
             {
-               
+
                 //set the variables
                 int j = level[i];
                 int k = level[i + 1];
@@ -131,18 +132,18 @@ namespace AdventOfCode
                     checksGreaterThan++;
                 }
             }
-                //if the checks score correctly
-                if (checksLessThan == totalChecks || checksGreaterThan == totalChecks)
-                {
-                    return true;
-                }
-                else
-                {
+            //if the checks score correctly
+            if (checksLessThan == totalChecks || checksGreaterThan == totalChecks)
+            {
+                return true;
+            }
+            else
+            {
 
-                    return false;
-                }
+                return false;
+            }
 
-            
+
 
         }
 
@@ -175,7 +176,7 @@ namespace AdventOfCode
 
             }
 
-                intList.Reverse();
+            intList.Reverse();
             //cout << endl;
             return intList;
 

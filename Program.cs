@@ -8,8 +8,10 @@ class AdventOfCode
 {
     static void Main(string[] args)
     {
-        string[] rawInput = File.ReadAllLines("testInput.txt");
-        Day4.DoWork(rawInput);
+        var starttime = DateTime.Now;
+        string[] rawInput = File.ReadAllLines("Input\\Day5Input.txt");
+        Day5.DoWork(rawInput);
+        Console.WriteLine($"Runtime: {DateTime.Now - starttime}");
     }
 
     

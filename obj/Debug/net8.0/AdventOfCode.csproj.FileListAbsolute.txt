@@ -12,11 +12,12 @@ D:\Repos\AdventOfCode\AdventOfCode\obj\Debug\net8.0\refint\AdventOfCode.dll
 D:\Repos\AdventOfCode\AdventOfCode\obj\Debug\net8.0\AdventOfCode.pdb
 D:\Repos\AdventOfCode\AdventOfCode\obj\Debug\net8.0\AdventOfCode.genruntimeconfig.cache
 D:\Repos\AdventOfCode\AdventOfCode\obj\Debug\net8.0\ref\AdventOfCode.dll
-D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\Day1Input.txt
-D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\Day2Input.txt
-D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\day2TestInput.txt
-D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\Day3Input - Copy.txt
-D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\Day4Input.txt
-D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\testInput.txt
-D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\HoldingCell.txt
 D:\Repos\AdventOfCode\AdventOfCode\obj\Debug\net8.0\AdventOfCode.sourcelink.json
+D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\Input\Day1Input.txt
+D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\Input\Day2Input.txt
+D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\Input\day2TestInput.txt
+D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\Input\Day3Input - Copy.txt
+D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\Input\Day4Input.txt
+D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\Input\Day5Input.txt
+D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\Input\HoldingCell.txt
+D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\Input\testInput.txt

@@ -40,47 +40,52 @@ namespace AdventOfCode
 
         static void FindXDashMASes(List<string> diagLR, List<string> diagRL)
         {
-            
+
             int foundInCurrentString = 0;
             List<Vector2> indexOfAs = new();
             List<Vector2> secondIndexOfAs = new();
+
 
             foreach (string line in diagLR)
             {
 
                 foreach (var match in Regex.Matches(line, "(MAS)|(SAM)"))
                 {
-                    indexOfAs.Add(new Vector2(diagLR.IndexOf(line), line.IndexOf(match.ToString()) +1));
+                    indexOfAs.Add(new Vector2(diagLR.IndexOf(line), line.IndexOf(match.ToString()) + 1));
 
                 }
             }
 
-            foreach(string line in diagRL)
+            foreach (string line in diagRL)
             {
                 foreach (var match in Regex.Matches(line, "(MAS)|(SAM)"))
                 {
-                    secondIndexOfAs.Add(new Vector2(diagRL.IndexOf(line), line.IndexOf(match.ToString())+1 ));
+                    secondIndexOfAs.Add(new Vector2(diagRL.IndexOf(line), line.IndexOf(match.ToString()) + 1));
 
 
                 }
 
             }
+            //diagLR and RL have differing coordinate systems, so you can't compare them directly.
+            //you'll have to convert them to global or something
+            //they meet in the exact center, which is why the 3x3 worked
 
-            foreach(var i in indexOfAs)
+            foreach (var i in indexOfAs)
             {
-                foreach(var j in secondIndexOfAs)
+                foreach (var j in secondIndexOfAs)
                 {
-                        Console.WriteLine($"{i.ToString()} ?= {j.ToString()}");
+                    Console.WriteLine($"{i.ToString()} ?= {j.ToString()}");
                     if (i.Equals(j))
                     {
                         Console.WriteLine($"Yes");
                         foundInCurrentString++;
-                    }else
+                    }
+                    else
                         Console.WriteLine($"No");
                 }
             }
 
-            Console.WriteLine("X-MASes found: " +  foundInCurrentString);
+            Console.WriteLine("X-MASes found: " + foundInCurrentString);
 
         }
 
@@ -128,7 +133,7 @@ namespace AdventOfCode
                 else return false;
             }
         }
-        
+
         static List<string> FindVerticalLines(string[] rawInput)
         {
             List<string> verticalLines = new();
@@ -181,7 +186,7 @@ namespace AdventOfCode
                 string diagLine = "";
                 int originalI = i;
                 Vector2 coordinates = Vector2.Zero;
-                int horIndex =  i;
+                int horIndex = i;
                 int vertIndex = 0;
                 while (horIndex + 1 < anyString.Length && horIndex < anyString.Length)
                 {
@@ -203,7 +208,7 @@ namespace AdventOfCode
 
             return result;
         }
-        
+
         static List<string> GetBottomToTopRightToLeftDiagonalLines(string[] arrayOfStrings)
         {
             List<string> result = new List<string>();
@@ -214,7 +219,7 @@ namespace AdventOfCode
                 int originalI = i;
                 Vector2 coordinates = Vector2.Zero;
                 int linesIndex = i;
-                int lRIndex = arrayOfStrings[linesIndex].Length-1;
+                int lRIndex = arrayOfStrings[linesIndex].Length - 1;
 
                 while (NextLineExists(arrayOfStrings, linesIndex))
                 {
@@ -235,14 +240,14 @@ namespace AdventOfCode
             }
 
             string anyString = arrayOfStrings[0];
-            for (int i = anyString.Length-2; i>=0; i--)
+            for (int i = anyString.Length - 2; i >= 0; i--)
             {
                 string diagLine = "";
                 int originalI = i;
                 Vector2 coordinates = Vector2.Zero;
                 int horIndex = i;
                 int vertIndex = 0;
-                while (horIndex-1>=0&&horIndex<anyString.Length&&NextLineExists(arrayOfStrings, vertIndex))
+                while (horIndex - 1 >= 0 && horIndex < anyString.Length && NextLineExists(arrayOfStrings, vertIndex))
                 {
                     coordinates.X = vertIndex;
                     coordinates.Y = horIndex;
@@ -272,6 +277,6 @@ namespace AdventOfCode
         {
             return currentIndex + 1 < listToCheck.Length;
         }
-        
+
     }
 }

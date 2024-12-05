@@ -40,13 +40,13 @@ namespace AdventOfCode
                         //Console.WriteLine("Multiplying ON" + matchString);
                     }
 
-                     if (dontRegEx.IsMatch(matchString))
+                    if (dontRegEx.IsMatch(matchString))
                     {
                         //Console.WriteLine("Multiplying OFF");
                         multiplyOn = false;
                     }
 
-                     if (numsRegEx.IsMatch(matchString) && multiplyOn)
+                    if (numsRegEx.IsMatch(matchString) && multiplyOn)
                     {
                         var numMatches = numsRegEx.Matches(matchString);
                         var mulNum = (int)(int.Parse(numMatches[0].ToString()) * nint.Parse(numMatches[1].ToString()));
