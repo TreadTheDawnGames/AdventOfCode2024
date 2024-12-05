@@ -1,0 +1,21 @@
+D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\AdventOfCode.exe
+D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\AdventOfCode.deps.json
+D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\AdventOfCode.runtimeconfig.json
+D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\AdventOfCode.dll
+D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\AdventOfCode.pdb
+D:\Repos\AdventOfCode\AdventOfCode\obj\Debug\net8.0\AdventOfCode.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repos\AdventOfCode\AdventOfCode\obj\Debug\net8.0\AdventOfCode.AssemblyInfoInputs.cache
+D:\Repos\AdventOfCode\AdventOfCode\obj\Debug\net8.0\AdventOfCode.AssemblyInfo.cs
+D:\Repos\AdventOfCode\AdventOfCode\obj\Debug\net8.0\AdventOfCode.csproj.CoreCompileInputs.cache
+D:\Repos\AdventOfCode\AdventOfCode\obj\Debug\net8.0\AdventOfCode.dll
+D:\Repos\AdventOfCode\AdventOfCode\obj\Debug\net8.0\refint\AdventOfCode.dll
+D:\Repos\AdventOfCode\AdventOfCode\obj\Debug\net8.0\AdventOfCode.pdb
+D:\Repos\AdventOfCode\AdventOfCode\obj\Debug\net8.0\AdventOfCode.genruntimeconfig.cache
+D:\Repos\AdventOfCode\AdventOfCode\obj\Debug\net8.0\ref\AdventOfCode.dll
+D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\Day1Input.txt
+D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\Day2Input.txt
+D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\day2TestInput.txt
+D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\Day3Input - Copy.txt
+D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\Day4Input.txt
+D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\testInput.txt
+D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\HoldingCell.txt
