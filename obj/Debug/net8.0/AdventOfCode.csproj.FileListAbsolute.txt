@@ -21,3 +21,7 @@ D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\Input\Day4Input.txt
 D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\Input\Day5Input.txt
 D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\Input\HoldingCell.txt
 D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\Input\testInput.txt
+D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\Input\Day13Input.txt
+D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\Input\Day14Input.txt
+D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\Input\Day15Input.txt
+D:\Repos\AdventOfCode\AdventOfCode\bin\Debug\net8.0\Input\Day6Input.txt
